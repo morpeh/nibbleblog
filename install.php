@@ -56,16 +56,8 @@ $blog_base_path = '/';
 $blog_address = 'http://'.getenv('HTTP_HOST');
 $installation_complete = false;
 $languagues = array(
-	'de_DE'=>'Deutsch',
 	'en_US'=>'English',
-	'es_ES'=>'Español',
-	'fr_FR'=>'Français',
-	'hu_HU'=>'Magyar',
-	'pl_PL'=>'Polski',
-	'pt_PT'=>'Português',
-	'ru_RU'=>'Pyccĸий',
-	'vi_VN'=>'Tiếng Việt',
-	'zh_TW'=>'繁體中文'
+	'ru_RU'=>'Pyccĸий'
 );
 
 // ============================================================================
@@ -91,8 +83,8 @@ if( dirname(getenv('REQUEST_URI')) != '/' )
 // LANGUAGES
 if( !@include( 'languages/'. $_GET['language'] . '.bit' ) )
 {
-	$_GET['language'] = 'en_US';
-	require( 'languages/en_US.bit' );
+	$_GET['language'] = 'ru_RU';
+	require( 'languages/ru_RU.bit' );
 }
 
 // ============================================================================
@@ -207,7 +199,7 @@ if( !@include( 'languages/'. $_GET['language'] . '.bit' ) )
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Nibbleblog Installer</title>
+	<title>Установка Nibbleblog</title>
 
 	<script src="./admin/js/jquery/jquery.js"></script>
 
@@ -448,7 +440,7 @@ if( !@include( 'languages/'. $_GET['language'] . '.bit' ) )
 		</section>
 
 		<footer>
-			<p><a href="http://nibbleblog.com">Nibbleblog <?php echo NIBBLEBLOG_VERSION ?> "<?php echo NIBBLEBLOG_NAME ?>"</a> | Copyright (2009 - 2012) + GPL v3 | Developed by Diego Najar | <?php echo $_HTML->link( array('content'=>$_LANG['EXPERT_MODE'], 'href'=>'./install.php?expert=true&language='.$_GET['language']) ) ?></p>
+			<p><a href="http://nibbleblog.com">Nibbleblog <?php echo NIBBLEBLOG_VERSION ?> "<?php echo NIBBLEBLOG_NAME ?>"</a> | Все права защищены (2009 - 2012) + GPL v3 | Разработчик Diego Najar | <?php echo $_HTML->link( array('content'=>$_LANG['EXPERT_MODE'], 'href'=>'./install.php?expert=true&language='.$_GET['language']) ) ?></p>
 		</footer>
 
 	</div>
